@@ -1,0 +1,9 @@
+{
+	"name": "Ohio-Cincy",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "84ba9540-baa1-4968-bb5f-fd02c757cdd5",
+		"tenantId": "98825390-a76d-41dd-8297-5f60fc12f17b"
+	}
+}
