@@ -201,7 +201,7 @@
 						"fileName": "population_by_age.tsv.gz",
 						"container": "population"
 					},
-					"columnDelimiter": ",",
+					"columnDelimiter": "\t",
 					"escapeChar": "\\",
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
