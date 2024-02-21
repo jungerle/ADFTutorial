@@ -73,9 +73,10 @@
 						"fileSystem": "raw"
 					},
 					"columnDelimiter": "\t",
+					"rowDelimiter": "\n",
 					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
+					"firstRowAsHeader": false,
+					"quoteChar": null
 				},
 				"schema": []
 			},
@@ -101,6 +102,7 @@
 						"container": "population"
 					},
 					"columnDelimiter": "\t",
+					"compressionCodec": "gzip",
 					"escapeChar": "\\",
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
