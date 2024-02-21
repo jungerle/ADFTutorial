@@ -7,13 +7,13 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "Ohio-Cincy"
 		},
-		"ls_covidjsusubscription_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'ls_covidjsusubscription'"
-		},
 		"dl_covidjsudatalake_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'dl_covidjsudatalake'"
+		},
+		"ls_covidjsusubscription_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_covidjsusubscription'"
 		},
 		"dl_covidjsudatalake_properties_typeProperties_url": {
 			"type": "string",
@@ -24,19 +24,6 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/ls_covidjsusubscription')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('ls_covidjsusubscription_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/dl_covidjsudatalake')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -50,6 +37,19 @@
 						"type": "SecureString",
 						"value": "[parameters('dl_covidjsudatalake_accountKey')]"
 					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_covidjsusubscription')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('ls_covidjsusubscription_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -100,6 +100,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": "population_by_age.tsv",
+						"folderPath": "population",
 						"fileSystem": "raw"
 					},
 					"columnDelimiter": "\t",

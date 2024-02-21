@@ -7,13 +7,13 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "Ohio-Cincy"
 		},
-		"ls_covidjsusubscription_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'ls_covidjsusubscription'"
-		},
 		"dl_covidjsudatalake_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'dl_covidjsudatalake'"
+		},
+		"ls_covidjsusubscription_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_covidjsusubscription'"
 		},
 		"dl_covidjsudatalake_properties_typeProperties_url": {
 			"type": "string",
@@ -46,11 +46,11 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"ls_covidjsusubscription_connectionString": {
-						"value": "[parameters('ls_covidjsusubscription_connectionString')]"
-					},
 					"dl_covidjsudatalake_accountKey": {
 						"value": "[parameters('dl_covidjsudatalake_accountKey')]"
+					},
+					"ls_covidjsusubscription_connectionString": {
+						"value": "[parameters('ls_covidjsusubscription_connectionString')]"
 					},
 					"dl_covidjsudatalake_properties_typeProperties_url": {
 						"value": "[parameters('dl_covidjsudatalake_properties_typeProperties_url')]"

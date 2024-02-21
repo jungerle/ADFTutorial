@@ -5,10 +5,10 @@
 		"factoryName": {
 			"value": "Ohio-Cincy"
 		},
-		"ls_covidjsusubscription_connectionString": {
+		"dl_covidjsudatalake_accountKey": {
 			"value": ""
 		},
-		"dl_covidjsudatalake_accountKey": {
+		"ls_covidjsusubscription_connectionString": {
 			"value": ""
 		},
 		"dl_covidjsudatalake_properties_typeProperties_url": {
