@@ -13,6 +13,9 @@
 		},
 		"dl_covidjsudatalake_properties_typeProperties_url": {
 			"value": "https://covidjsudatalake.dfs.core.windows.net/"
+		},
+		"tr_population_data_properties_typeProperties_scope": {
+			"value": "/subscriptions/f952409b-38e3-4a85-902f-6ada944dfd99/resourceGroups/covid-mapping-rg/providers/Microsoft.Storage/storageAccounts/covidjsusubscription"
 		}
 	}
 }
