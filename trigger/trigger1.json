@@ -1,0 +1,18 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2024-02-22T11:13:00",
+				"endTime": "2024-02-29T16:13:00",
+				"timeZone": "Eastern Standard Time"
+			}
+		}
+	}
+}
