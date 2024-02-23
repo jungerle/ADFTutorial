@@ -101,11 +101,11 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"relativeURL": {
-											"value": "@item().srcRelativeURL",
+											"value": "@item().sourceRelativeURL",
 											"type": "Expression"
 										},
 										"baseURL": {
-											"value": "@item().srcBaseURL",
+											"value": "@item().sourceBaseURL",
 											"type": "Expression"
 										}
 									}
