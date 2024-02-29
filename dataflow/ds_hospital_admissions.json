@@ -51,6 +51,12 @@
 				},
 				{
 					"name": "PivotDailyValue"
+				},
+				{
+					"name": "SortWeeklyByDateCountry"
+				},
+				{
+					"name": "SortDailyByDateCountry"
 				}
 			],
 			"scriptLines": [
@@ -154,7 +160,11 @@
 				"     pivotBy(indicator, ['Daily hospital occupancy', 'Daily ICU occupancy']),",
 				"     count = sum(value),",
 				"     columnNaming: '$V_$N',",
-				"     lateral: true) ~> PivotDailyValue"
+				"     lateral: true) ~> PivotDailyValue",
+				"PivotWeeklyValue sort(desc(ecdc_year_week, true),",
+				"     asc(country, true)) ~> SortWeeklyByDateCountry",
+				"PivotDailyValue sort(desc(reported_date, true),",
+				"     asc(country, true)) ~> SortDailyByDateCountry"
 			]
 		}
 	}
