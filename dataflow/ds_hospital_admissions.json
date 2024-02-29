@@ -26,7 +26,18 @@
 					"name": "DimDateData"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "SinkWeekly"
+				},
+				{
+					"dataset": {
+						"referenceName": "ds_daily_hospital_admissions_data",
+						"type": "DatasetReference"
+					},
+					"name": "SinkDaily"
+				}
+			],
 			"transformations": [
 				{
 					"name": "SelectHospitalDataCleanup"
@@ -196,7 +207,18 @@
 				"          source",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> SelectDailyCleanup"
+				"     skipDuplicateMapOutputs: true) ~> SelectDailyCleanup",
+				"SelectWeeklyCleanup sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> SinkWeekly",
+				"SelectDailyCleanup sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> SinkDaily"
 			]
 		}
 	}
