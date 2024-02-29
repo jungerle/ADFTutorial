@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "df_transform_cases_and_deaths",
+				"name": "df_hospital_admissions",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "df_transform_cases_and_deaths",
+						"referenceName": "ds_hospital_admissions",
 						"type": "DataFlowReference"
 					},
 					"compute": {
