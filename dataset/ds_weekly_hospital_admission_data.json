@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "weekly_hospital_admissions.csv",
-				"folderPath": "ecdc/hospital_admissions",
+				"folderPath": "ecdc/hospital_admissions/weekly",
 				"fileSystem": "processed"
 			},
 			"columnDelimiter": ",",
