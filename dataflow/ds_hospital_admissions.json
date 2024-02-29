@@ -42,6 +42,9 @@
 				},
 				{
 					"name": "AggregateDimDate"
+				},
+				{
+					"name": "JoinDimDate"
 				}
 			],
 			"scriptLines": [
@@ -115,7 +118,12 @@
 				"     disjoint: false) ~> SplitWeeklyDaily@(Weekly, Daily)",
 				"DimDateData aggregate(groupBy(ecdc_year_week = year + '-W' + lpad(week_of_year, 2, '0') ),",
 				"     week_start_date = min(date),",
-				"          week_end_date = max(date)) ~> AggregateDimDate"
+				"          week_end_date = max(date)) ~> AggregateDimDate",
+				"SplitWeeklyDaily@Weekly, AggregateDimDate join(reported_year_week == ecdc_year_week,",
+				"     joinType:'inner',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> JoinDimDate"
 			]
 		}
 	}
