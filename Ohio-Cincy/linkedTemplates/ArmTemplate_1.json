@@ -92,7 +92,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"dataflow": {
-								"referenceName": "ds_hospital_admissions",
+								"referenceName": "df_hospital_admissions",
 								"type": "DataFlowReference",
 								"parameters": {},
 								"datasetParameters": {

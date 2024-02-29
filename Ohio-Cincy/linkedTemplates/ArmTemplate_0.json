@@ -554,7 +554,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": "weekly_hospital_admissions.csv",
-						"folderPath": "ecdc/hospital_admissions",
+						"folderPath": "ecdc/hospital_admissions/weekly",
 						"fileSystem": "processed"
 					},
 					"columnDelimiter": ",",
@@ -583,7 +583,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": "hospital_admissions_daily.csv",
-						"folderPath": "ecdc/hospital_admissions",
+						"folderPath": "ecdc/hospital_admissions/daily",
 						"fileSystem": "processed"
 					},
 					"columnDelimiter": ",",
@@ -1089,7 +1089,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_hospital_admissions')]",
+			"name": "[concat(parameters('factoryName'), '/df_hospital_admissions')]",
 			"type": "Microsoft.DataFactory/factories/dataflows",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1241,7 +1241,7 @@
 						"     skipDuplicateMapOutputs: true) ~> SelectCountryCodeCleanup",
 						"SelectCountryCodeCleanup split(indicator == 'Weekly new hospital admissions per 100k' || indicator == 'Weekly new ICU admissions per 100k',",
 						"     disjoint: false) ~> SplitWeeklyDaily@(Weekly, Daily)",
-						"DimDateData aggregate(groupBy(ecdc_year_week = year + '-W' + lpad(week_of_year, 2, '0') ),",
+						"DimDateData aggregate(groupBy(ecdc_year_week = year+'-W'+lpad(week_of_year,2,'0')),",
 						"     week_start_date = min(date),",
 						"          week_end_date = max(date)) ~> AggregateDimDate",
 						"SplitWeeklyDaily@Weekly, AggregateDimDate join(reported_year_week == ecdc_year_week,",
