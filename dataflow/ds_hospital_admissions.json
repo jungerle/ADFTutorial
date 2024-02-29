@@ -47,7 +47,10 @@
 					"name": "JoinDimDate"
 				},
 				{
-					"name": "PivotWeeklyIntoHospitalICUCounts"
+					"name": "PivotWeeklyValue"
+				},
+				{
+					"name": "PivotDailyValue"
 				}
 			],
 			"scriptLines": [
@@ -140,7 +143,9 @@
 				"     pivotBy(indicator, ['Weekly new ICU admissions per 100k', 'Weekly new hospital admissions per 100k']),",
 				"     count = sum(value),",
 				"     columnNaming: '$V_$N',",
-				"     lateral: true) ~> PivotWeeklyIntoHospitalICUCounts"
+				"     lateral: true) ~> PivotWeeklyValue",
+				"SplitWeeklyDaily@Daily pivot(columnNaming: '$N$V',",
+				"     lateral: true) ~> PivotDailyValue"
 			]
 		}
 	}
